@@ -135,7 +135,7 @@ class Calculator extends React.Component {
             break;
           }
         }
-        console.log(temp);
+        //console.log(temp);
       }
       infix.push(temp);
     }
@@ -147,7 +147,7 @@ class Calculator extends React.Component {
     var postfix = [];
     var stack   = [];
     infix.forEach(value => {
-      console.log('\nStack : \'' + stack + '\'\nPostfix : \'' + postfix + '\'\n--------------------');
+      //console.log('\nStack : \'' + stack + '\'\nPostfix : \'' + postfix + '\'\n--------------------');
       switch (value) {
         case ')': {
           for (var i = stack.length - 1; i >= 0; i--){
@@ -249,7 +249,7 @@ class Calculator extends React.Component {
     while (stack.length > 0)
       postfix.push(stack.pop());
 
-    console.log('\nStack : \'' + stack + '\'\nPostfix : \'' + postfix + '\'\n--------------------');
+    //console.log('\nStack : \'' + stack + '\'\nPostfix : \'' + postfix + '\'\n--------------------');
     return postfix;
   }
   
@@ -263,14 +263,11 @@ class Calculator extends React.Component {
     var stack   = [];
     var temp    = postfix;
     postfix.forEach(value => {
-      console.log(temp);
-      console.log('Stack : ' + stack);
-      console.log('value : ' + value);
+      //console.log('Stack : ' + stack);
       if (value == '+' || value == '-' || value == 'x' || value == '/') {
         var num2 = parseFloat(stack.pop());
         var num1 = parseFloat(stack.pop());
         
-        console.log('Here I am');
         switch (value) {
           case '+': {
             result = num1 + num2;
@@ -303,7 +300,7 @@ class Calculator extends React.Component {
     });
     result = stack.pop();
     this.setState({result:result.toString()});
-    console.log('\nSonuç : ' + result);
+    console.log('\Result : ' + result);
   }
 
   newButton(value, buttonStyle = styles.classicButton) {
